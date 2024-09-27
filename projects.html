@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/project.css">
   <script defer src="js/projects.js"></script>
 </head>
+
 <body>
   <header>
     <h1>My Projects</h1>
@@ -23,27 +25,45 @@
   <section id="projects">
     <h2>Projects</h2>
 
-    <!-- Project 1 (Image card) -->
     <div class="project-card" onclick="openModal('project1')">
-      <img src="img/George-Russell-Mercedes.jpg" alt="Project 1" class="project-img">
-      <div class="project-title">Project 1</div>
+      <img src="img/illusion.png" alt="Project 1" class="project-img">
+      <div class="project-title">Illusion</div>
     </div>
 
     <div class="project-card" onclick="openModal('project2')">
-      <img src="path-to-your-image2.jpg" alt="Project 2" class="project-img">
-      <div class="project-title">Project 2</div>
+      <img src="img/scroller.png" alt="Project 2" class="project-img">
+      <div class="project-title">infinite scroller</div>
     </div>
 
+    <div class="project-card" onclick="openModal('project3')">
+      <img src="img/finedining.png" alt="Project 3" class="project-img">
+      <div class="project-title">Fine Dining</div>
+    </div>
+
+    <div class="project-card" onclick="openModal('project4')">
+      <img src="img/pokemon.png" alt="Project 4" class="project-img">
+      <div class="project-title">pokemon</div>
+    </div>
+
+    <div class="project-card" onclick="openModal('project5')">
+      <img src="img/blog.png" alt="Project 5" class="project-img">
+      <div class="project-title">GameBlog</div>
+    </div>
+
+    <div class="project-card" onclick="openModal('project6')">
+      <img src="img/japan.png" alt="Project 6" class="project-img">
+      <div class="project-title">Japan Museum</div>
+    </div>
   </section>
 
   <div id="project1" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('project1')">&times;</span>
-      <img src="img/George-Russell-Mercedes.jpg" alt="Project 1 Full Image" class="modal-img">
+      <img src="img/illusion.png" alt="Project 1 Full Image" class="modal-img">
       <div class="modal-details">
-        <h2>Project 1</h2>
-        <p>domme onzin over mn project.</p>
-        <a href="https://www.youtube.com" target="_blank">View Live Project</a>
+        <h2>Illusion</h2>
+        <p>geyap over Illusion</p>
+        <a href="https://35300.hosts2.ma-cloud.nl/Illusion/homepage/home.html" target="_blank">View Live Project</a>
       </div>
     </div>
   </div>
@@ -51,11 +71,59 @@
   <div id="project2" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('project2')">&times;</span>
-      <img src="path-to-your-image2.jpg" alt="Project 2 Full Image" class="modal-img">
+      <img src="img/scroller.png" alt="Project 2 Full Image" class="modal-img">
       <div class="modal-details">
-        <h2>Project 2</h2>
+        <h2>infinite scroller</h2>
         <p>Nog meer onzin.</p>
-        <a href="#" target="_blank">View Live Project</a>
+        <a href="https://35300.hosts2.ma-cloud.nl/scroller/" target="_blank">View Live Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project3')">&times;</span>
+      <img src="img/finedining.png" alt="Project 3 Full Image" class="modal-img">
+      <div class="modal-details">
+        <h2>Fine Dining</h2>
+        <p>Nog meer onzin.</p>
+        <a href="https://35300.hosts2.ma-cloud.nl/finedining/" target="_blank">View Live Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project4')">&times;</span>
+      <img src="img/pokemon.png" alt="Project 4 Full Image" class="modal-img">
+      <div class="modal-details">
+        <h2>Pokemon</h2>
+        <p>Nog meer onzin.</p>
+        <a href="https://35300.hosts2.ma-cloud.nl/pokemon/" target="_blank">View Live Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project5')">&times;</span>
+      <img src="img/blog.png" alt="Project 5 Full Image" class="modal-img">
+      <div class="modal-details">
+        <h2>GameBlog</h2>
+        <p>Nog meer onzin.</p>
+        <a href="https://35300.hosts2.ma-cloud.nl/blog/index.html" target="_blank">View Live Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="project6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('project6')">&times;</span>
+      <img src="img/japan.png" alt="Project 6 Full Image" class="modal-img">
+      <div class="modal-details">
+        <h2>Japan</h2>
+        <p>Nog meer onzin.</p>
+        <a href="https://35300.hosts2.ma-cloud.nl/japanblog/" target="_blank">View Live Project</a>
       </div>
     </div>
   </div>
@@ -64,4 +132,5 @@
     <p>&copy; 2024 Eric Reijtenbagh. All Rights Reserved.</p>
   </footer>
 </body>
+
 </html>

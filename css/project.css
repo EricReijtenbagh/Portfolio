@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -76,14 +75,14 @@ nav ul li a {
 
 
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); 
+  background-color: rgba(0, 0, 0, 0.8);
   overflow: auto;
 }
 
@@ -143,7 +142,6 @@ nav ul li a {
   color: red;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
