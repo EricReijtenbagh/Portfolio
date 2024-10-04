@@ -18,6 +18,7 @@ header {
   text-align: center;
 }
 
+
 nav ul {
   background: #444;
   padding: 10px;
@@ -37,8 +38,30 @@ nav ul li a {
 
 section {
   padding: 20px;
-  margin: 20px 0;
   background: #fff;
+}
+
+#about {
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#about>div {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 60%;
+}
+
+#about>div>img {
+  max-width: 35%;
+ height: 40%;
+
 }
 
 #home {
@@ -118,7 +141,26 @@ section {
   }
 }
 
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  #about>div {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  #about>div>img {
+    max-width: 80%;
+    height: auto;
+    
+  }
+}
+
 footer {
+  margin-top: auto;
   text-align: center;
   padding: 20px;
   background: #333;
