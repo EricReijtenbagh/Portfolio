@@ -95,7 +95,7 @@ function initLenis() {
 function initCustomCursor() {
     const cursor = document.getElementById('cursor');
     const cursorTrail = document.getElementById('cursor-trail');
-    const cursorText = cursor ? cursor.querySelector('.cursor-text') : null;
+    const cursorText = cursor ? cursor.querySelector('.cursor-label') : null;
 
     if (!cursor || !cursorTrail) return;
 

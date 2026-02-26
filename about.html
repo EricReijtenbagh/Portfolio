@@ -30,32 +30,32 @@
 
 
 <!-- Custom Cursor -->
-<div id="cursor-trail" class="fixed top-0 left-0 pointer-events-none z-[9998] -ml-1 -mt-1 hidden md:block" aria-hidden="true"><div class="cursor-trail-inner rounded-full transition-all duration-500 ease-out opacity-30 w-3 h-3 bg-white"></div></div>
-<div id="cursor" class="fixed top-0 left-0 pointer-events-none z-[9999] -ml-2 -mt-2 mix-blend-exclusion hidden md:block" aria-hidden="true"><div class="cursor-inner bg-white rounded-full transition-all duration-300 ease-out w-4 h-4 opacity-100"></div><div class="cursor-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 opacity-0 scale-50">VIEW</div></div>
+<div id="cursor-trail" aria-hidden="true"><div class="cursor-trail-dot"></div></div>
+<div id="cursor" aria-hidden="true"><div class="cursor-dot"></div><div class="cursor-label">VIEW</div></div>
 
 <!-- Page Transition -->
-<div id="page-transition" class="fixed inset-0 bg-brand-diamond z-[90] pointer-events-none -translate-y-full transition-transform duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)]" aria-hidden="true"><div class="absolute inset-0 flex items-center justify-center"><span class="font-display font-bold text-black text-4xl md:text-6xl tracking-tighter opacity-20">ER.</span></div></div>
+<div id="page-transition" aria-hidden="true"><div class="page-transition-inner"><span class="page-transition-text">ER.</span></div></div>
 
 <!-- Navigation -->
-<header class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:py-8 bg-transparent" id="navbar">
-    <nav class="container mx-auto flex items-center justify-between">
-        <a href="index.html" class="font-display font-bold text-xl text-white hover:text-brand-diamond transition-colors cursor-interactive">ER<span class="text-brand-diamond">.</span></a>
-        <div class="hidden md:flex items-center gap-12">
-            <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Home</a>
-            <a href="projects.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Projecten</a>
-            <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive is-active">Over Mij</a>
-            <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Contact</a>
+<header class="site-header" id="navbar">
+    <nav class="container mx-auto nav-container">
+        <a href="index.html" class="site-logo">ER<span class="logo-dot">.</span></a>
+        <div class="nav-desktop">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="projects.html" class="nav-link">Projecten</a>
+            <a href="about.html" class="nav-link is-active">Over Mij</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </div>
-        <a href="contact.html" class="hidden md:flex items-center gap-2 px-6 py-3 bg-brand-diamond text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors cursor-interactive magnetic-hover"><span>Contact</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
-        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-interactive" aria-label="Toggle menu"><span class="w-6 h-0.5 bg-white transition-transform"></span><span class="w-6 h-0.5 bg-white transition-opacity"></span><span class="w-6 h-0.5 bg-white transition-transform"></span></button>
+        <a href="contact.html" class="nav-cta"><span>Contact</span><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+        <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </nav>
 </header>
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark translate-x-full transition-transform duration-500 md:hidden">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-        <a href="index.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Home</a>
-        <a href="projects.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Projecten</a>
-        <a href="about.html" class="font-display font-bold text-4xl text-brand-diamond">Over Mij</a>
-        <a href="contact.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Contact</a>
+<div id="mobile-menu">
+    <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="projects.html" class="mobile-menu-link">Projecten</a>
+        <a href="about.html" class="mobile-menu-link is-active">Over Mij</a>
+        <a href="contact.html" class="mobile-menu-link">Contact</a>
     </div>
 </div>
 <div class="bg-noise" aria-hidden="true"></div>
@@ -85,19 +85,19 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="border-y border-white/10 bg-white/[0.02]">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-                <span class="font-display font-bold text-5xl md:text-7xl mb-2">14+</span>
-                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Projecten</span>
+    <section class="stats-section">
+        <div class="container mx-auto stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">14+</span>
+                <span class="stat-label">Projecten</span>
             </div>
-            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-                <span class="font-display font-bold text-5xl md:text-7xl mb-2">4+</span>
-                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Jaar Ervaring</span>
+            <div class="stat-item">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Jaar Ervaring</span>
             </div>
-            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-                <span class="font-display font-bold text-5xl md:text-7xl mb-2">&infin;</span>
-                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Passie</span>
+            <div class="stat-item">
+                <span class="stat-number">&infin;</span>
+                <span class="stat-label">Passie</span>
             </div>
         </div>
     </section>
@@ -190,25 +190,38 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-brand-dark pt-20 md:pt-32 pb-12 px-6 border-t border-white/10 min-h-screen flex flex-col justify-between">
-    <div class="container mx-auto flex-grow flex flex-col justify-center">
+<footer class="site-footer">
+    <div class="container mx-auto footer-container">
         <div class="mb-20">
-            <p class="text-brand-diamond font-mono text-sm uppercase tracking-widest mb-8">Klaar om samen te werken?</p>
-            <a href="contact.html" class="group block relative cursor-interactive magnetic-hover">
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-transparent group-hover:text-outline transition-all duration-500">LATEN WE</h2>
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-brand-diamond group-hover:italic transition-all duration-500 ml-[5vw] md:ml-[10vw]">SAMEN</h2>
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-transparent text-outline group-hover:text-white transition-all duration-500 text-right">WERKEN</h2>
+            <p class="footer-cta-label">Klaar om samen te werken?</p>
+            <a href="contact.html" class="footer-cta-link">
+                <h2 class="footer-cta-line footer-cta-line--1">LATEN WE</h2>
+                <h2 class="footer-cta-line footer-cta-line--2">SAMEN</h2>
+                <h2 class="footer-cta-line footer-cta-line--3">WERKEN</h2>
             </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12">
-            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Contact</h4><a href="mailto:Eric.Reijtenbagh@gmail.com" class="block text-xl text-white hover:text-brand-diamond transition-colors line-reveal">Eric.Reijtenbagh@gmail.com</a></div>
-            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Locatie</h4><p class="text-xl text-white">Nederland<br>Digitaal Overal</p></div>
-            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Socials</h4><div class="flex gap-4"><a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-instagram"></i></a></div></div>
+        <div class="footer-info">
+            <div>
+                <h4 class="footer-info-heading">Contact</h4>
+                <a href="mailto:Eric.Reijtenbagh@gmail.com" class="footer-info-link">Eric.Reijtenbagh@gmail.com</a>
+            </div>
+            <div>
+                <h4 class="footer-info-heading">Locatie</h4>
+                <p class="footer-info-text">Nederland<br>Digitaal Overal</p>
+            </div>
+            <div>
+                <h4 class="footer-info-heading">Socials</h4>
+                <div class="social-links">
+                    <a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="container mx-auto mt-20 flex flex-col md:flex-row justify-between items-end gap-8">
-        <div class="text-[12vw] md:text-[12rem] font-display font-bold text-white/5 leading-none -mb-[1rem] md:-mb-[4rem] pointer-events-none select-none" aria-hidden="true">ER.</div>
-        <div class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-4"><span>&copy; 2026 Eric Reijtenbagh</span></div>
+    <div class="container mx-auto footer-bottom">
+        <div class="footer-watermark" aria-hidden="true">ER.</div>
+        <div class="footer-copyright"><span>&copy; 2026 Eric Reijtenbagh</span></div>
     </div>
 </footer>
 

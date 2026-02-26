@@ -77,50 +77,50 @@
 </div>
 
 <!-- Custom Cursor -->
-<div id="cursor-trail" class="fixed top-0 left-0 pointer-events-none z-[9998] -ml-1 -mt-1 hidden md:block" aria-hidden="true">
-    <div class="cursor-trail-inner rounded-full transition-all duration-500 ease-out opacity-30 w-3 h-3 bg-white"></div>
+<div id="cursor-trail" aria-hidden="true">
+    <div class="cursor-trail-dot"></div>
 </div>
-<div id="cursor" class="fixed top-0 left-0 pointer-events-none z-[9999] -ml-2 -mt-2 mix-blend-exclusion hidden md:block" aria-hidden="true">
-    <div class="cursor-inner bg-white rounded-full transition-all duration-300 ease-out w-4 h-4 opacity-100"></div>
-    <div class="cursor-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 opacity-0 scale-50">VIEW</div>
+<div id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-label">VIEW</div>
 </div>
 
 <!-- Page Transition -->
-<div id="page-transition" class="fixed inset-0 bg-brand-diamond z-[90] pointer-events-none -translate-y-full transition-transform duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)]" aria-hidden="true">
-    <div class="absolute inset-0 flex items-center justify-center">
-        <span class="font-display font-bold text-black text-4xl md:text-6xl tracking-tighter opacity-20">ER.</span>
+<div id="page-transition" aria-hidden="true">
+    <div class="page-transition-inner">
+        <span class="page-transition-text">ER.</span>
     </div>
 </div>
 
 <!-- Navigation -->
-<header class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:py-8 bg-transparent" id="navbar">
-    <nav class="container mx-auto flex items-center justify-between">
-        <a href="index.html" class="font-display font-bold text-xl text-white hover:text-brand-diamond transition-colors cursor-interactive">ER<span class="text-brand-diamond">.</span></a>
-        <div class="hidden md:flex items-center gap-12">
-            <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive" data-page="index.html">Home</a>
-            <a href="projects.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive" data-page="projects.html">Projecten</a>
-            <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive" data-page="about.html">Over Mij</a>
-            <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive" data-page="contact.html">Contact</a>
+<header class="site-header" id="navbar">
+    <nav class="container mx-auto nav-container">
+        <a href="index.html" class="site-logo">ER<span class="logo-dot">.</span></a>
+        <div class="nav-desktop">
+            <a href="index.html" class="nav-link" data-page="index.html">Home</a>
+            <a href="projects.html" class="nav-link" data-page="projects.html">Projecten</a>
+            <a href="about.html" class="nav-link" data-page="about.html">Over Mij</a>
+            <a href="contact.html" class="nav-link" data-page="contact.html">Contact</a>
         </div>
-        <a href="contact.html" class="hidden md:flex items-center gap-2 px-6 py-3 bg-brand-diamond text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors cursor-interactive magnetic-hover">
+        <a href="contact.html" class="nav-cta">
             <span>Contact</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
         </a>
-        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-interactive" aria-label="Toggle menu">
-            <span class="w-6 h-0.5 bg-white transition-transform"></span>
-            <span class="w-6 h-0.5 bg-white transition-opacity"></span>
-            <span class="w-6 h-0.5 bg-white transition-transform"></span>
+        <button id="mobile-menu-btn" class="mobile-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </nav>
 </header>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark translate-x-full transition-transform duration-500 md:hidden">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-        <a href="index.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Home</a>
-        <a href="projects.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Projecten</a>
-        <a href="about.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Over Mij</a>
-        <a href="contact.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Contact</a>
+<div id="mobile-menu">
+    <div class="mobile-menu-inner">
+        <a href="index.html" class="mobile-menu-link">Home</a>
+        <a href="projects.html" class="mobile-menu-link">Projecten</a>
+        <a href="about.html" class="mobile-menu-link">Over Mij</a>
+        <a href="contact.html" class="mobile-menu-link">Contact</a>
     </div>
 </div>
 
@@ -199,51 +199,21 @@
             </a>
             <a href="projects.html" class="group block" data-cursor="project">
                 <div class="relative aspect-video overflow-hidden mb-6 border border-white/10">
-                    <img src="img/scroller.png" alt="Infinite Scroller" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">JavaScript / API</span></div>
+                    <img src="img/softdrill.png" alt="Softdrill" class="w-full h-full object-cover" loading="lazy">
+                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">WordPress / Elementor</span></div>
                 </div>
                 <div class="flex justify-between items-start">
-                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/03</span><h3 class="font-display font-bold text-3xl text-white mb-2">INFINITE SCROLLER</h3></div>
+                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/03</span><h3 class="font-display font-bold text-3xl text-white mb-2">SOFTDRILL</h3></div>
                     <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
                 </div>
             </a>
             <a href="projects.html" class="group block" data-cursor="project">
                 <div class="relative aspect-video overflow-hidden mb-6 border border-white/10">
-                    <img src="img/finedining.png" alt="Fine Dining" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">WordPress / PHP</span></div>
+                    <img src="img/useducation.png" alt="US Education" class="w-full h-full object-cover" loading="lazy">
+                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">WordPress / Elementor</span></div>
                 </div>
                 <div class="flex justify-between items-start">
-                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/04</span><h3 class="font-display font-bold text-3xl text-white mb-2">FINE DINING</h3></div>
-                    <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                </div>
-            </a>
-            <a href="projects.html" class="group block" data-cursor="project">
-                <div class="relative aspect-video overflow-hidden mb-6 border border-white/10">
-                    <img src="img/pokemon.png" alt="Pokemon API" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">JavaScript / API</span></div>
-                </div>
-                <div class="flex justify-between items-start">
-                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/05</span><h3 class="font-display font-bold text-3xl text-white mb-2">POKEMON API</h3></div>
-                    <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                </div>
-            </a>
-            <a href="projects.html" class="group block" data-cursor="project">
-                <div class="relative aspect-video overflow-hidden mb-6 border border-white/10">
-                    <img src="img/blog.png" alt="GameBlog" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">HTML / CSS</span></div>
-                </div>
-                <div class="flex justify-between items-start">
-                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/06</span><h3 class="font-display font-bold text-3xl text-white mb-2">GAMEBLOG</h3></div>
-                    <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                </div>
-            </a>
-            <a href="projects.html" class="group block" data-cursor="project">
-                <div class="relative aspect-video overflow-hidden mb-6 border border-white/10">
-                    <img src="img/japan.png" alt="Japan Museum" class="w-full h-full object-cover" loading="lazy">
-                    <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1 rounded-full"><span class="font-mono text-[10px] text-white uppercase tracking-widest">CSS / Design</span></div>
-                </div>
-                <div class="flex justify-between items-start">
-                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/07</span><h3 class="font-display font-bold text-3xl text-white mb-2">JAPAN MUSEUM</h3></div>
+                    <div><span class="text-brand-diamond font-mono text-xs mb-1 block">/04</span><h3 class="font-display font-bold text-3xl text-white mb-2">US EDUCATION</h3></div>
                     <div class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
                 </div>
             </a>
@@ -251,7 +221,7 @@
     </div>
 
     <!-- Desktop Horizontal Scroll Version -->
-    <div id="horizontal-scroll-section" class="hidden md:block relative h-[600vh]">
+    <div id="horizontal-scroll-section" class="hidden md:block relative h-[400vh]">
         <div class="sticky top-0 h-screen overflow-hidden flex flex-col z-30 bg-brand-dark">
             <!-- Header -->
             <div class="container mx-auto px-6 pt-10 md:pt-20 flex justify-between items-end shrink-0 relative z-20">
@@ -291,63 +261,27 @@
                             <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
                         </div>
                     </a>
-                    <!-- Project 3 -->
+                    <!-- Project 3 - Softdrill -->
                     <a href="projects.html" class="relative group w-[85vw] md:w-[60vw] lg:w-[50vw] flex-shrink-0 block" data-cursor="project">
                         <div class="relative aspect-video overflow-hidden mb-8 border border-white/10 bg-brand-dark">
                             <div class="absolute inset-0 bg-brand-diamond/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="img/scroller.png" alt="Infinite Scroller" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">JavaScript / API</span></div>
+                            <img src="img/softdrill.png" alt="Softdrill" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
+                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">WordPress / Elementor</span></div>
                         </div>
                         <div class="flex justify-between items-end border-b border-white/20 pb-6 group-hover:border-brand-diamond transition-colors duration-500">
-                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/03</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">INFINITE SCROLLER</h3></div>
+                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/03</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">SOFTDRILL</h3></div>
                             <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
                         </div>
                     </a>
-                    <!-- Project 4 -->
+                    <!-- Project 4 - USeducation -->
                     <a href="projects.html" class="relative group w-[85vw] md:w-[60vw] lg:w-[50vw] flex-shrink-0 block" data-cursor="project">
                         <div class="relative aspect-video overflow-hidden mb-8 border border-white/10 bg-brand-dark">
                             <div class="absolute inset-0 bg-brand-diamond/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="img/finedining.png" alt="Fine Dining" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">WordPress / PHP</span></div>
+                            <img src="img/useducation.png" alt="US Education" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
+                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">WordPress / Elementor</span></div>
                         </div>
                         <div class="flex justify-between items-end border-b border-white/20 pb-6 group-hover:border-brand-diamond transition-colors duration-500">
-                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/04</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">FINE DINING</h3></div>
-                            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                        </div>
-                    </a>
-                    <!-- Project 5 -->
-                    <a href="projects.html" class="relative group w-[85vw] md:w-[60vw] lg:w-[50vw] flex-shrink-0 block" data-cursor="project">
-                        <div class="relative aspect-video overflow-hidden mb-8 border border-white/10 bg-brand-dark">
-                            <div class="absolute inset-0 bg-brand-diamond/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="img/pokemon.png" alt="Pokemon API" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">JavaScript / API</span></div>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/20 pb-6 group-hover:border-brand-diamond transition-colors duration-500">
-                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/05</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">POKEMON API</h3></div>
-                            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                        </div>
-                    </a>
-                    <!-- Project 6 -->
-                    <a href="projects.html" class="relative group w-[85vw] md:w-[60vw] lg:w-[50vw] flex-shrink-0 block" data-cursor="project">
-                        <div class="relative aspect-video overflow-hidden mb-8 border border-white/10 bg-brand-dark">
-                            <div class="absolute inset-0 bg-brand-diamond/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="img/blog.png" alt="GameBlog" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">HTML / CSS</span></div>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/20 pb-6 group-hover:border-brand-diamond transition-colors duration-500">
-                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/06</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">GAMEBLOG</h3></div>
-                            <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
-                        </div>
-                    </a>
-                    <!-- Project 7 -->
-                    <a href="projects.html" class="relative group w-[85vw] md:w-[60vw] lg:w-[50vw] flex-shrink-0 block" data-cursor="project">
-                        <div class="relative aspect-video overflow-hidden mb-8 border border-white/10 bg-brand-dark">
-                            <div class="absolute inset-0 bg-brand-diamond/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                            <img src="img/japan.png" alt="Japan Museum" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-110 group-hover:scale-100 transition-all duration-700 ease-out" loading="lazy">
-                            <div class="absolute top-4 right-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full z-20"><span class="font-mono text-xs text-white uppercase tracking-widest">CSS / Design</span></div>
-                        </div>
-                        <div class="flex justify-between items-end border-b border-white/20 pb-6 group-hover:border-brand-diamond transition-colors duration-500">
-                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/07</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">JAPAN MUSEUM</h3></div>
+                            <div><span class="block font-mono text-sm text-brand-diamond mb-2">/04</span><h3 class="font-display font-bold text-4xl md:text-5xl lg:text-6xl text-white group-hover:text-brand-diamond transition-colors duration-300">US EDUCATION</h3></div>
                             <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond transition-all duration-300"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div>
                         </div>
                     </a>
@@ -394,19 +328,19 @@
 <!-- ===================================
      STATS SECTION
      =================================== -->
-<section class="border-y border-white/10 bg-white/[0.02]">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
-        <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-            <span class="font-display font-bold text-5xl md:text-7xl mb-2">14+</span>
-            <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Projecten</span>
+<section class="stats-section">
+    <div class="container mx-auto stats-grid">
+        <div class="stat-item">
+            <span class="stat-number">14+</span>
+            <span class="stat-label">Projecten</span>
         </div>
-        <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-            <span class="font-display font-bold text-5xl md:text-7xl mb-2">4+</span>
-            <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Jaar Ervaring</span>
+        <div class="stat-item">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Jaar Ervaring</span>
         </div>
-        <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
-            <span class="font-display font-bold text-5xl md:text-7xl mb-2">&infin;</span>
-            <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Passie</span>
+        <div class="stat-item">
+            <span class="stat-number">&infin;</span>
+            <span class="stat-label">Passie</span>
         </div>
     </div>
 </section>
@@ -414,38 +348,38 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-brand-dark pt-20 md:pt-32 pb-12 px-6 border-t border-white/10 min-h-screen flex flex-col justify-between">
-    <div class="container mx-auto flex-grow flex flex-col justify-center">
+<footer class="site-footer">
+    <div class="container mx-auto footer-container">
         <div class="mb-20">
-            <p class="text-brand-diamond font-mono text-sm uppercase tracking-widest mb-8">Klaar om samen te werken?</p>
-            <a href="contact.html" class="group block relative cursor-interactive magnetic-hover">
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-transparent group-hover:text-outline transition-all duration-500">LATEN WE</h2>
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-brand-diamond group-hover:italic transition-all duration-500 ml-[5vw] md:ml-[10vw]">SAMEN</h2>
-                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-transparent text-outline group-hover:text-white transition-all duration-500 text-right">WERKEN</h2>
+            <p class="footer-cta-label">Klaar om samen te werken?</p>
+            <a href="contact.html" class="footer-cta-link">
+                <h2 class="footer-cta-line footer-cta-line--1">LATEN WE</h2>
+                <h2 class="footer-cta-line footer-cta-line--2">SAMEN</h2>
+                <h2 class="footer-cta-line footer-cta-line--3">WERKEN</h2>
             </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12">
+        <div class="footer-info">
             <div>
-                <h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Contact</h4>
-                <a href="mailto:Eric.Reijtenbagh@gmail.com" class="block text-xl text-white hover:text-brand-diamond transition-colors line-reveal">Eric.Reijtenbagh@gmail.com</a>
+                <h4 class="footer-info-heading">Contact</h4>
+                <a href="mailto:Eric.Reijtenbagh@gmail.com" class="footer-info-link">Eric.Reijtenbagh@gmail.com</a>
             </div>
             <div>
-                <h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Locatie</h4>
-                <p class="text-xl text-white">Nederland<br>Digitaal Overal</p>
+                <h4 class="footer-info-heading">Locatie</h4>
+                <p class="footer-info-text">Nederland<br>Digitaal Overal</p>
             </div>
             <div>
-                <h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Socials</h4>
-                <div class="flex gap-4">
-                    <a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-instagram"></i></a>
+                <h4 class="footer-info-heading">Socials</h4>
+                <div class="social-links">
+                    <a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mx-auto mt-20 flex flex-col md:flex-row justify-between items-end gap-8">
-        <div class="text-[12vw] md:text-[12rem] font-display font-bold text-white/5 leading-none -mb-[1rem] md:-mb-[4rem] pointer-events-none select-none" aria-hidden="true">ER.</div>
-        <div class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-4 flex flex-col md:flex-row items-end gap-4">
+    <div class="container mx-auto footer-bottom">
+        <div class="footer-watermark" aria-hidden="true">ER.</div>
+        <div class="footer-copyright">
             <span>&copy; 2026 Eric Reijtenbagh</span>
         </div>
     </div>
