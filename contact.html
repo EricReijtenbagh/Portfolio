@@ -1,46 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="nl" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Eric Reijtenbagh</title>
-  <link rel="stylesheet" href="css/contact.css">
-  <script src="https://kit.fontawesome.com/46abd8fb46.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Contact | Eric Reijtenbagh</title>
+    <meta name="theme-color" content="#00BFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['ui-monospace', 'SFMono-Regular', 'monospace'] },
+            colors: { brand: { diamond: '#00BFFF', dark: '#030303', gray: '#0f0f0f', silver: '#cfcfcf' } },
+            animation: { 'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards', 'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards', 'spin-slow': 'spin 12s linear infinite' },
+            keyframes: { fadeInUp: { '0%': { opacity: '0', transform: 'translateY(40px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }, fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } } }
+          },
+        },
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="bg-brand-dark text-white font-sans selection:bg-brand-diamond selection:text-black">
 
-<body>
-  <header>
-    <h1>Eric Reijtenbagh</h1>
-  </header>
+<a href="#main-content" class="skip-link font-mono">Skip to main content</a>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me at <a href="mailto:Eric.Reijtenbagh@gmail.com">Eric.Reijtenbagh@gmail.com</a>.</p>
-    <p>Or call me! <a href="tel:+31625068791">0625068791</a></p>
+<!-- Custom Cursor -->
+<div id="cursor-trail" class="fixed top-0 left-0 pointer-events-none z-[9998] -ml-1 -mt-1 hidden md:block" aria-hidden="true"><div class="cursor-trail-inner rounded-full transition-all duration-500 ease-out opacity-30 w-3 h-3 bg-white"></div></div>
+<div id="cursor" class="fixed top-0 left-0 pointer-events-none z-[9999] -ml-2 -mt-2 mix-blend-exclusion hidden md:block" aria-hidden="true"><div class="cursor-inner bg-white rounded-full transition-all duration-300 ease-out w-4 h-4 opacity-100"></div><div class="cursor-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 opacity-0 scale-50">VIEW</div></div>
 
-    <h3>Connect with me on social media:</h3>
-    <ul class="social-media">
-      <li><a href="https://github.com/EricReijtenbagh" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-      <li><a href="https://www.instagram.com/Eric_Reij" target="_blank"><i class="fab fa-instagram"></i>
-          Instagram</a></li>
-      <li><a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank"><i class="fab fa-linkedin"></i>
-          LinkedIn</a></li>
-    </ul>
-  </section>
+<!-- Page Transition -->
+<div id="page-transition" class="fixed inset-0 bg-brand-diamond z-[90] pointer-events-none -translate-y-full transition-transform duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)]" aria-hidden="true"><div class="absolute inset-0 flex items-center justify-center"><span class="font-display font-bold text-black text-4xl md:text-6xl tracking-tighter opacity-20">ER.</span></div></div>
 
-  <footer>
-    <p>&copy; 2024 Eric Reijtenbagh. All Rights Reserved.</p>
-  </footer>
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:py-8 bg-transparent" id="navbar">
+    <nav class="container mx-auto flex items-center justify-between">
+        <a href="index.html" class="font-display font-bold text-xl text-white hover:text-brand-diamond transition-colors cursor-interactive">ER<span class="text-brand-diamond">.</span></a>
+        <div class="hidden md:flex items-center gap-12">
+            <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Home</a>
+            <a href="projects.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Projecten</a>
+            <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Over Mij</a>
+            <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive is-active">Contact</a>
+        </div>
+        <a href="mailto:Eric.Reijtenbagh@gmail.com" class="hidden md:flex items-center gap-2 px-6 py-3 bg-brand-diamond text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors cursor-interactive magnetic-hover"><span>Email</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-interactive" aria-label="Toggle menu"><span class="w-6 h-0.5 bg-white transition-transform"></span><span class="w-6 h-0.5 bg-white transition-opacity"></span><span class="w-6 h-0.5 bg-white transition-transform"></span></button>
+    </nav>
+</header>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark translate-x-full transition-transform duration-500 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a href="index.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Home</a>
+        <a href="projects.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Projecten</a>
+        <a href="about.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Over Mij</a>
+        <a href="contact.html" class="font-display font-bold text-4xl text-brand-diamond">Contact</a>
+    </div>
+</div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<main id="main-content" class="flex-grow" role="main" tabindex="-1">
+
+<div class="bg-brand-dark min-h-screen text-white pt-32 pb-20 flex flex-col">
+    <!-- Hero -->
+    <section class="px-6 mb-16 md:mb-24">
+        <div class="container mx-auto">
+            <h1 class="font-display font-bold text-[12vw] leading-[0.8] tracking-tighter mix-blend-difference mb-8">
+                CONTACT <br>
+                <span class="text-brand-diamond ml-[10vw]">UPLINK</span>
+            </h1>
+            <p class="font-mono text-gray-500 text-sm md:text-base uppercase tracking-widest max-w-xl">
+                Heb je een project in gedachten of wil je<br>
+                gewoon even kennismaken? Kies je kanaal.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="px-6 flex-grow">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 gap-px bg-white/10 border-t border-white/10">
+                <!-- Email -->
+                <a href="mailto:Eric.Reijtenbagh@gmail.com" class="group relative bg-brand-dark p-8 md:p-16 hover:bg-white/[0.02] transition-all duration-500 overflow-hidden cursor-interactive border-b border-white/10">
+                    <div class="absolute inset-0 bg-brand-diamond/5 translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div class="md:w-1/4"><div class="text-gray-500 group-hover:text-brand-diamond transition-colors"><svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div></div>
+                        <div class="md:w-1/2">
+                            <div class="flex items-center gap-3 mb-2"><span class="font-mono text-xs text-brand-diamond">/01</span><span class="font-mono text-xs text-gray-500 uppercase tracking-widest">Email</span></div>
+                            <h3 class="font-display font-bold text-3xl md:text-5xl lg:text-6xl group-hover:text-brand-diamond transition-colors duration-300">Eric.Reijtenbagh@gmail.com</h3>
+                            <p class="mt-4 text-gray-400 font-light opacity-60 group-hover:opacity-100 transition-opacity">Voor vragen, samenwerkingen en projecten.</p>
+                        </div>
+                        <div class="md:w-1/4 flex justify-end"><div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond group-hover:rotate-45 transition-all duration-500"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div></div>
+                    </div>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="group relative bg-brand-dark p-8 md:p-16 hover:bg-white/[0.02] transition-all duration-500 overflow-hidden cursor-interactive border-b border-white/10">
+                    <div class="absolute inset-0 bg-brand-diamond/5 translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div class="md:w-1/4"><div class="text-gray-500 group-hover:text-brand-diamond transition-colors"><i class="fab fa-github text-3xl md:text-5xl"></i></div></div>
+                        <div class="md:w-1/2">
+                            <div class="flex items-center gap-3 mb-2"><span class="font-mono text-xs text-brand-diamond">/02</span><span class="font-mono text-xs text-gray-500 uppercase tracking-widest">GitHub</span></div>
+                            <h3 class="font-display font-bold text-3xl md:text-5xl lg:text-6xl group-hover:text-brand-diamond transition-colors duration-300">EricReijtenbagh</h3>
+                            <p class="mt-4 text-gray-400 font-light opacity-60 group-hover:opacity-100 transition-opacity">Bekijk mijn code en projecten.</p>
+                        </div>
+                        <div class="md:w-1/4 flex justify-end"><div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond group-hover:rotate-45 transition-all duration-500"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div></div>
+                    </div>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="group relative bg-brand-dark p-8 md:p-16 hover:bg-white/[0.02] transition-all duration-500 overflow-hidden cursor-interactive border-b border-white/10">
+                    <div class="absolute inset-0 bg-brand-diamond/5 translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div class="md:w-1/4"><div class="text-gray-500 group-hover:text-brand-diamond transition-colors"><i class="fab fa-linkedin-in text-3xl md:text-5xl"></i></div></div>
+                        <div class="md:w-1/2">
+                            <div class="flex items-center gap-3 mb-2"><span class="font-mono text-xs text-brand-diamond">/03</span><span class="font-mono text-xs text-gray-500 uppercase tracking-widest">LinkedIn</span></div>
+                            <h3 class="font-display font-bold text-3xl md:text-5xl lg:text-6xl group-hover:text-brand-diamond transition-colors duration-300">Eric Reijtenbagh</h3>
+                            <p class="mt-4 text-gray-400 font-light opacity-60 group-hover:opacity-100 transition-opacity">Connect voor professioneel netwerk.</p>
+                        </div>
+                        <div class="md:w-1/4 flex justify-end"><div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond group-hover:rotate-45 transition-all duration-500"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div></div>
+                    </div>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="group relative bg-brand-dark p-8 md:p-16 hover:bg-white/[0.02] transition-all duration-500 overflow-hidden cursor-interactive border-b border-white/10">
+                    <div class="absolute inset-0 bg-brand-diamond/5 translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)]"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                        <div class="md:w-1/4"><div class="text-gray-500 group-hover:text-brand-diamond transition-colors"><i class="fab fa-instagram text-3xl md:text-5xl"></i></div></div>
+                        <div class="md:w-1/2">
+                            <div class="flex items-center gap-3 mb-2"><span class="font-mono text-xs text-brand-diamond">/04</span><span class="font-mono text-xs text-gray-500 uppercase tracking-widest">Instagram</span></div>
+                            <h3 class="font-display font-bold text-3xl md:text-5xl lg:text-6xl group-hover:text-brand-diamond transition-colors duration-300">@Eric_Reij</h3>
+                            <p class="mt-4 text-gray-400 font-light opacity-60 group-hover:opacity-100 transition-opacity">Volg mij voor lifestyle en sneakers.</p>
+                        </div>
+                        <div class="md:w-1/4 flex justify-end"><div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-brand-diamond group-hover:border-brand-diamond group-hover:rotate-45 transition-all duration-500"><svg class="w-6 h-6 text-white group-hover:text-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"></path></svg></div></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="px-6 mt-20">
+        <div class="container mx-auto">
+            <div class="border border-white/10 p-8 md:p-12 bg-white/[0.01] flex flex-col md:flex-row items-center gap-8 md:gap-16">
+                <div class="relative w-24 h-24 flex-shrink-0 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-brand-diamond/20 rounded-full blur-xl animate-pulse"></div>
+                    <svg class="text-white relative z-10 animate-spin-slow w-12 h-12" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <div class="text-center md:text-left">
+                    <h3 class="font-mono text-xs uppercase tracking-widest text-brand-diamond mb-2">Locatie</h3>
+                    <p class="font-display text-2xl md:text-3xl text-white mb-2">Nederland <span class="text-gray-500 mx-2">//</span> Digitaal Overal</p>
+                </div>
+                <div class="md:ml-auto">
+                    <div class="px-4 py-2 border border-brand-diamond/30 bg-brand-diamond/10 rounded-full flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full bg-brand-diamond animate-pulse"></div>
+                        <span class="font-mono text-xs text-brand-diamond tracking-widest uppercase">Beschikbaar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-brand-dark px-6 py-12 border-t border-white/10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-end gap-8">
+        <div class="text-[12vw] md:text-[12rem] font-display font-bold text-white/5 leading-none -mb-[1rem] md:-mb-[4rem] pointer-events-none select-none" aria-hidden="true">ER.</div>
+        <div class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-4"><span>&copy; 2026 Eric Reijtenbagh</span></div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>

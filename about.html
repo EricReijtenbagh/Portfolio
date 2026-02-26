@@ -1,52 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Eric Reijtenbagh</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Over Mij | Eric Reijtenbagh</title>
+    <meta name="theme-color" content="#00BFFF">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['ui-monospace', 'SFMono-Regular', 'monospace'] },
+            colors: { brand: { diamond: '#00BFFF', dark: '#030303', gray: '#0f0f0f', silver: '#cfcfcf' } },
+            animation: { 'marquee': 'marquee 40s linear infinite', 'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards', 'fade-in': 'fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards', 'spin-slow': 'spin 12s linear infinite' },
+            keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-100%)' } }, fadeInUp: { '0%': { opacity: '0', transform: 'translateY(40px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }, fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } } }
+          },
+        },
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-    <h1>Eric Reijtenbagh</h1>
-  </header>
+<body class="bg-brand-dark text-white font-sans selection:bg-brand-diamond selection:text-black">
 
-  <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="contact.html">Contact</a></li> 
-    </ul>
-  </nav>
+<a href="#main-content" class="skip-link font-mono">Skip to main content</a>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div>
-    <p><b> Developer met een Passie voor CSS en HTML</b>
-      <br>
-    Als frontend developer ben ik gespecialiseerd in het bouwen van moderne en gebruiksvriendelijke websites. Mijn voorkeur
-    ligt bij het werken met CSS en HTML, omdat ik er echt van geniet om pixel-perfect designs om te zetten naar realiteit.
-    Samenwerken met anderen is een belangrijk aspect van mijn werk, en ik vind het fijn om in een team te opereren, waar ik
-    samen met collega's en klanten de beste resultaten kan bereiken.
-    </p>
-    <p><b> Gaming en Fashion Enthousiasteling</b>
-      <br>
-    In mijn vrije tijd ben ik een fervent gamer en houd ik me veel bezig met fashion. Ik vind het leuk om creatief bezig te
-    zijn, of dat nu achter een computer of met mode is. Af en toe stream ik mijn gamesessies met vrienden, en ik maak soms
-    ook video's die ik op YouTube zet. Het combineren van gaming en contentcreatie geeft me veel voldoening en is voor mij
-    een leuke manier om te ontspannen en mijn creatieve kant te laten zien.</p></div>
-<div>
-    <img src="img/ikcroatie.jpg" alt="">
-    <img src="img/ik.jpg" alt=""> 
-    <img src="img/travis.jpg" alt="">
-    <img src="img/shoewall.jpg" alt="">
-    </div>  
-  </section>
-  <section></section>
-  <footer>
-    <p>&copy; 2024 Eric Reijtenbagh. All Rights Reserved.</p>
-  </footer>
+
+<!-- Custom Cursor -->
+<div id="cursor-trail" class="fixed top-0 left-0 pointer-events-none z-[9998] -ml-1 -mt-1 hidden md:block" aria-hidden="true"><div class="cursor-trail-inner rounded-full transition-all duration-500 ease-out opacity-30 w-3 h-3 bg-white"></div></div>
+<div id="cursor" class="fixed top-0 left-0 pointer-events-none z-[9999] -ml-2 -mt-2 mix-blend-exclusion hidden md:block" aria-hidden="true"><div class="cursor-inner bg-white rounded-full transition-all duration-300 ease-out w-4 h-4 opacity-100"></div><div class="cursor-text absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-black font-mono text-[10px] font-bold tracking-widest uppercase transition-all duration-300 opacity-0 scale-50">VIEW</div></div>
+
+<!-- Page Transition -->
+<div id="page-transition" class="fixed inset-0 bg-brand-diamond z-[90] pointer-events-none -translate-y-full transition-transform duration-[600ms] ease-[cubic-bezier(0.76,0,0.24,1)]" aria-hidden="true"><div class="absolute inset-0 flex items-center justify-center"><span class="font-display font-bold text-black text-4xl md:text-6xl tracking-tighter opacity-20">ER.</span></div></div>
+
+<!-- Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:py-8 bg-transparent" id="navbar">
+    <nav class="container mx-auto flex items-center justify-between">
+        <a href="index.html" class="font-display font-bold text-xl text-white hover:text-brand-diamond transition-colors cursor-interactive">ER<span class="text-brand-diamond">.</span></a>
+        <div class="hidden md:flex items-center gap-12">
+            <a href="index.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Home</a>
+            <a href="projects.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Projecten</a>
+            <a href="about.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive is-active">Over Mij</a>
+            <a href="contact.html" class="nav-link font-mono text-xs uppercase tracking-widest text-white hover:text-brand-diamond transition-colors cursor-interactive">Contact</a>
+        </div>
+        <a href="contact.html" class="hidden md:flex items-center gap-2 px-6 py-3 bg-brand-diamond text-black font-mono text-xs uppercase tracking-widest hover:bg-white transition-colors cursor-interactive magnetic-hover"><span>Contact</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 cursor-interactive" aria-label="Toggle menu"><span class="w-6 h-0.5 bg-white transition-transform"></span><span class="w-6 h-0.5 bg-white transition-opacity"></span><span class="w-6 h-0.5 bg-white transition-transform"></span></button>
+    </nav>
+</header>
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-dark translate-x-full transition-transform duration-500 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+        <a href="index.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Home</a>
+        <a href="projects.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Projecten</a>
+        <a href="about.html" class="font-display font-bold text-4xl text-brand-diamond">Over Mij</a>
+        <a href="contact.html" class="font-display font-bold text-4xl text-white hover:text-brand-diamond transition-colors">Contact</a>
+    </div>
+</div>
+<div class="bg-noise" aria-hidden="true"></div>
+
+<main id="main-content" class="flex-grow" role="main" tabindex="-1">
+
+<div class="bg-brand-dark min-h-screen text-white pt-32 pb-20">
+    <!-- Hero Section -->
+    <section class="px-6 mb-32">
+        <div class="container mx-auto">
+            <h1 class="font-display font-bold text-[12vw] leading-[0.85] tracking-tighter mb-12 mix-blend-difference">
+                FRONTEND <br>
+                <span class="text-brand-diamond ml-[10vw]">DEVELOPER</span> <br>
+                MET PASSIE.
+            </h1>
+            <div class="flex flex-col md:flex-row justify-between items-start border-t border-white/20 pt-8">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <span class="font-mono text-xs uppercase tracking-widest text-brand-diamond">// Over Eric</span>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-xl md:text-3xl font-light leading-relaxed text-gray-300">
+                        Als frontend developer ben ik gespecialiseerd in het bouwen van moderne en gebruiksvriendelijke websites. Mijn voorkeur ligt bij CSS en HTML, omdat ik er echt van geniet om pixel-perfect designs om te zetten naar realiteit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="border-y border-white/10 bg-white/[0.02]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
+                <span class="font-display font-bold text-5xl md:text-7xl mb-2">14+</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Projecten</span>
+            </div>
+            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
+                <span class="font-display font-bold text-5xl md:text-7xl mb-2">4+</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Jaar Ervaring</span>
+            </div>
+            <div class="p-8 md:p-16 flex flex-col items-center justify-center hover:bg-white/5 transition-colors duration-500">
+                <span class="font-display font-bold text-5xl md:text-7xl mb-2">&infin;</span>
+                <span class="font-mono text-xs uppercase tracking-widest text-gray-500">Passie</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DNA / Interests Section -->
+    <section class="py-32 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row gap-20">
+            <div class="md:w-1/3 md:sticky md:top-32 h-min">
+                <h2 class="font-display font-bold text-6xl mb-6">DNA</h2>
+                <p class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-8">Mijn Interesses</p>
+                <svg class="w-16 h-16 text-brand-diamond animate-spin-slow opacity-50" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+            </div>
+            <div class="md:w-2/3 flex flex-col gap-24">
+                <div class="group">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-6 text-brand-diamond group-hover:bg-brand-diamond group-hover:text-black transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-4xl md:text-5xl mb-4">GAMING</h3>
+                    <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">Fervent gamer, stream soms met vrienden en maak video's voor YouTube.</p>
+                </div>
+                <div class="group">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-6 text-brand-diamond group-hover:bg-brand-diamond group-hover:text-black transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-4xl md:text-5xl mb-4">SNEAKERS & FASHION</h3>
+                    <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">Grote liefde voor sneakers en fashion. Creatief bezig met mode.</p>
+                </div>
+                <div class="group">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mb-6 text-brand-diamond group-hover:bg-brand-diamond group-hover:text-black transition-all duration-500">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                    </div>
+                    <h3 class="font-display font-bold text-4xl md:text-5xl mb-4">CODE & DESIGN</h3>
+                    <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl">Combineren van techniek en creativiteit voor pixel-perfect resultaten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photos Section -->
+    <section class="py-32 px-6 bg-black relative overflow-hidden">
+        <div class="absolute inset-0 bg-noise opacity-20"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="mb-20">
+                <h2 class="font-display font-bold text-6xl md:text-8xl">BEHIND THE <span class="text-brand-diamond">CODE</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="md:col-span-2 relative aspect-video overflow-hidden border border-white/10 group cursor-interactive">
+                    <img src="img/ikcroatie.jpg" alt="Eric in Kroatie" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700" loading="lazy">
+                </div>
+                <div class="relative aspect-square overflow-hidden border border-white/10 group cursor-interactive">
+                    <img src="img/ik.jpg" alt="Eric" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700" loading="lazy">
+                </div>
+                <div class="relative aspect-square overflow-hidden border border-white/10 group cursor-interactive">
+                    <img src="img/shoewall.jpg" alt="Sneaker collectie" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700" loading="lazy">
+                </div>
+                <div class="md:col-span-2 relative aspect-video overflow-hidden border border-white/10 group cursor-interactive">
+                    <img src="img/travis.jpg" alt="Concert met vrienden" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-700" loading="lazy">
+                    <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
+                        <span class="font-mono text-xs text-white uppercase tracking-widest">Concerten & Events</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Marquee -->
+    <section class="py-20 border-y border-white/10 bg-brand-diamond text-black overflow-hidden">
+        <div class="container mx-auto px-6 mb-8">
+            <span class="font-mono text-xs uppercase tracking-widest border-b border-black/20 pb-1">Mijn Toolkit</span>
+        </div>
+        <div class="flex gap-12 animate-marquee whitespace-nowrap">
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">HTML</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">CSS</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">JAVASCRIPT</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">GIT</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">WORDPRESS</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">VS CODE</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">RESPONSIVE</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">HTML</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">CSS</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+            <div class="flex items-center gap-12"><span class="font-display font-bold text-6xl md:text-8xl opacity-80">JAVASCRIPT</span><div class="w-4 h-4 bg-black rounded-full"></div></div>
+        </div>
+    </section>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-brand-dark pt-20 md:pt-32 pb-12 px-6 border-t border-white/10 min-h-screen flex flex-col justify-between">
+    <div class="container mx-auto flex-grow flex flex-col justify-center">
+        <div class="mb-20">
+            <p class="text-brand-diamond font-mono text-sm uppercase tracking-widest mb-8">Klaar om samen te werken?</p>
+            <a href="contact.html" class="group block relative cursor-interactive magnetic-hover">
+                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-transparent group-hover:text-outline transition-all duration-500">LATEN WE</h2>
+                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-white group-hover:text-brand-diamond group-hover:italic transition-all duration-500 ml-[5vw] md:ml-[10vw]">SAMEN</h2>
+                <h2 class="font-display font-bold text-[13vw] md:text-[12vw] leading-[0.85] md:leading-[0.8] text-transparent text-outline group-hover:text-white transition-all duration-500 text-right">WERKEN</h2>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/10 pt-12">
+            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Contact</h4><a href="mailto:Eric.Reijtenbagh@gmail.com" class="block text-xl text-white hover:text-brand-diamond transition-colors line-reveal">Eric.Reijtenbagh@gmail.com</a></div>
+            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Locatie</h4><p class="text-xl text-white">Nederland<br>Digitaal Overal</p></div>
+            <div><h4 class="text-gray-500 font-mono text-xs uppercase tracking-widest mb-4">Socials</h4><div class="flex gap-4"><a href="https://github.com/EricReijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-github"></i></a><a href="https://www.linkedin.com/in/ericreijtenbagh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/Eric_Reij" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-brand-diamond hover:border-brand-diamond hover:text-black transition-all duration-300 hover:scale-110"><i class="fab fa-instagram"></i></a></div></div>
+        </div>
+    </div>
+    <div class="container mx-auto mt-20 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div class="text-[12vw] md:text-[12rem] font-display font-bold text-white/5 leading-none -mb-[1rem] md:-mb-[4rem] pointer-events-none select-none" aria-hidden="true">ER.</div>
+        <div class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-4"><span>&copy; 2026 Eric Reijtenbagh</span></div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
 </body>
-
 </html>
